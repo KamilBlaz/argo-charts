@@ -1,0 +1,39 @@
+
+nodeSelector: {}
+
+image:
+  name: ""
+  tag: ""
+  pullPolicy: IfNotPresent
+
+replicaCount: 3
+
+readinessProbe:
+    httpGet:
+      port: 8080
+      path: "/health"
+    initialDelaySeconds: 10
+    periodSeconds: 10
+    timeoutSeconds: 30
+    failureThreshold: 3
+
+livenessProbe:
+    httpGet:
+      port: 8080
+      path: "/health"
+    initialDelaySeconds: 30
+    periodSeconds: 30
+    timeoutSeconds: 60
+    failureThreshold: 3
+
+envs:
+  HTTP_PROXY: ""
+  JSON_LOGS: ""
+  ENV: ""
+  APP_HOST: ""
+  APP_PORT: ""
+
+securityContext:
+  runAsNonRoot: true
+  runAsUser: 101
+  fsGroup: 101

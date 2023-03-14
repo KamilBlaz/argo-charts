@@ -1,15 +1,17 @@
 apiVersion: v1
 entries:
-  quarkus:
+  app:
   - apiVersion: v2
-    created: "2023-03-14T17:37:57.312458+01:00"
-    description: A Helm chart to build and deploy Quarkus applications
-    digest: 6297b17669b1a74ca067e7a906ae081c77c77c3a36fe450bc4e4b48b1c918b44
-    keywords:
-    - runtimes
-    - quarkus
-    name: quarkus
+    appVersion: 1.0.0
+    created: "2023-03-14T20:22:26.731185+01:00"
+    description: Web app
+    digest: db9b81ad13c02b70f7a990fdf5bf3483dac25047d95f6a703f64dce0939e9eec
+    maintainers:
+    - email: blazkamil@outlook.com
+      name: blazkamil
+    name: app
+    type: application
     urls:
-    - https://kamilblaz.github.io/argo-charts/charts/quarkus-0.0.3.tgz
-    version: 0.0.3
-generated: "2023-03-14T17:37:57.311397+01:00"
+    - https://kamilblaz.github.io/argo-charts/charts/app-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-03-14T20:22:26.730775+01:00"

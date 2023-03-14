@@ -8,21 +8,16 @@ spec:
   destination:
     namespace: demo
     server: https://kubernetes.default.svc
-  project: default
+  project: app
   source:
     helm:
       values: |
-        build:
-          enabled: false
-        deploy:
-          route:
-            tls:
-              enabled: true
         image:
-          name: quay.io/ablock/gitops-helm-quarkus
-    chart: quarkus
+          name: blusik99/app
+          tag: 1.0
+    chart: app
     repoURL: https://kamilblaz.github.io/argo-charts/
-    targetRevision: 0.0.3
+    targetRevision: 0.0.1
   syncPolicy:
     automated:
       prune: true
