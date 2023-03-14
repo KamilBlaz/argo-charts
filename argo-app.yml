@@ -21,7 +21,7 @@ spec:
         image:
           name: quay.io/ablock/gitops-helm-quarkus
     chart: quarkus
-    repoURL: https://github.com/KamilBlaz/argo-charts
+    repoURL: https://kamilblaz.github.io/argo-charts/
     targetRevision: 0.0.3
   syncPolicy:
     automated:
