@@ -1,11 +1,9 @@
-
-
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: quarkus-app
-  namespace: default
+  namespace: argocd
 spec:
   destination:
     namespace: demo
@@ -13,15 +11,17 @@ spec:
   project: default
   source:
     helm:
-      parameters:
-       - name: build.enabled
-          value: "false"
-        - name: deploy.route.tls.enabled
-          value: "true"
-       - name: image.name
-          value: quay.io/ablock/gitops-helm-quarkus
+      values: |
+        build:
+          enabled: false
+        deploy:
+          route:
+            tls:
+              enabled: true
+        image:
+          name: quay.io/ablock/gitops-helm-quarkus
     chart: quarkus
-    repoURL: https://github.com/KamilBlaz/argo-charts.git
+    repoURL: https://github.com/KamilBlaz/argo-charts
     targetRevision: 0.0.3
   syncPolicy:
     automated:
