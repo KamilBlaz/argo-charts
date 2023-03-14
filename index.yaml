@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   quarkus:
   - apiVersion: v2
-    created: "2023-03-14T17:15:03.312343+01:00"
+    created: "2023-03-14T17:22:16.530624+01:00"
     description: A Helm chart to build and deploy Quarkus applications
     digest: 6297b17669b1a74ca067e7a906ae081c77c77c3a36fe450bc4e4b48b1c918b44
     keywords:
@@ -10,6 +10,6 @@ entries:
     - quarkus
     name: quarkus
     urls:
-    - quarkus-0.0.3.tgz
+    - https://github.com/KamilBlaz/argo-charts/charts/quarkus-0.0.3.tgz
     version: 0.0.3
-generated: "2023-03-14T17:15:03.31073+01:00"
+generated: "2023-03-14T17:22:16.529811+01:00"

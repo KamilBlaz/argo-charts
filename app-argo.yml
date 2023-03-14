@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: robusta
+  namespace: argocd
+spec:
+  destination:
+    namespace: robusta
+    server: 'https://kubernetes.default.svc'
+  source:
+    repoURL: 'https://robusta-charts.storage.googleapis.com'
+    targetRevision: 0.10.12
+    chart: robusta
+    helm:
+      values: |
+        build:
+          enabled: false
+        deploy:
+          route:
+            tls:
+              enabled: true
+        image:
+          name: quay.io/ablock/gitops-helm-quarkus
+      parameters:
+        - name: clusterName
+          value: demo_cluster
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+    syncOptions:
+      - CreateNamespace=true
